@@ -20,15 +20,11 @@ options:
   -o, --output OUTPUT   Output directory (default: ./recon_<domain>)
 ```
 Examples:
+```
   reconner.py example.com
-  
   reconner.py example.com example2.com
-  
   reconner.py -f domains.txt
-  
   reconner.py example.com -v3 --th 30 --ra
-  
   reconner.py example.com -o /tmp/recon_output
-  
   reconner.py example.com -tt wordpress,laravel
-  
+```
