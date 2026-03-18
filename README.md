@@ -6,7 +6,7 @@ reconner — Authorized Pentest Reconnaissance Toolkit
 
 positional arguments:
   domains               Domain(s) to scan
-
+```
 options:
   -h, --help            show this help message and exit
   -f, --file FILE       File containing domains (one per line)
@@ -18,7 +18,7 @@ options:
   -v, --verbosity {0,1,2,3,4,5}
                         Verbosity 0-5 (default: 2)
   -o, --output OUTPUT   Output directory (default: ./recon_<domain>)
-
+```
 Examples:
   reconner.py example.com
   
