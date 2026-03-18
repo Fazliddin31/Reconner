@@ -693,7 +693,7 @@ def collect_all_js_urls(alive_urls, wayback_js_urls):
     """
     Collect JS URLs from ALL sources:
     1. Alive host HTML pages (script tags)
-    2. Wayback classified JS files
+    2. Wayback classified JS files (live + archived fallback)
     3. Nested JS found inside other JS files
     Returns dict: {js_url: parent_url}
     """
@@ -725,13 +725,18 @@ def collect_all_js_urls(alive_urls, wayback_js_urls):
     alive_js_count = len(js_map)
     ok(f"From alive pages: {alive_js_count} JS files", 2)
 
-    # Source 2: wayback JS files
+    # Source 2: wayback JS files — add both live URL and archived fallback
     wb_added = 0
     for js_url in wayback_js_urls:
         if js_url not in js_map:
             js_map[js_url] = "wayback"
             wb_added += 1
-    ok(f"From wayback: {wb_added} JS files added", 2)
+        # Also add the Wayback archived version as fallback
+        # This catches JS files deleted from the live server
+        wb_archived = f"https://web.archive.org/web/2024if_/{js_url}"
+        if wb_archived not in js_map:
+            js_map[wb_archived] = "wayback-archive"
+    ok(f"From wayback: {wb_added} JS files (+archived fallbacks)", 2)
 
     ok(f"Total unique JS to analyze: {C.BLD}{len(js_map)}{C.RST}", 1)
     return js_map
