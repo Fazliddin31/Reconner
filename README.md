@@ -1,3 +1,5 @@
+#### Reconnaissance tool that focused on searching subdomains by Passive Reecon and crawling on found js files from source code for api endpoints (so it's literally not making any noise to the server), there is options -tt to use specific list of wordlist to scan your target. Use only with agreement and official works, do not make harm to people.
+
 ##### reconner.py -h
 
 usage: reconnerv3.py [-h] [-f FILE] [-tt TARGET_TYPE] [--ra] [--to TO] [--th TH] [-v {0,1,2,3,4,5}] [-o OUTPUT] [domains ...]
