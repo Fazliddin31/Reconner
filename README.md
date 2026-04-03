@@ -2,7 +2,7 @@
 
 ##### reconner.py -h
 
-usage: reconnerv3.py [-h] [-f FILE] [-tt TARGET_TYPE] [--ra] [--to TO] [--th TH] [-v {0,1,2,3,4,5}] [-o OUTPUT] [domains ...]
+usage: reconner.py [-h] [-f FILE] [-tt TARGET_TYPE] [--ra] [--to TO] [--th TH] [-v {0,1,2,3,4,5}] [-o OUTPUT] [domains ...]
 
 reconner — Authorized Pentest Reconnaissance Toolkit
 
